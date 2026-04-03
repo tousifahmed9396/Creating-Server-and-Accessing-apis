@@ -19,7 +19,7 @@ def add_user():
     users.append(new_user)
     return jsonify({"message": "User added!"}), 201
 
-@app.route('/users/<int:user_id>', methods=['PUT'], strict_slashes=False)
+@app.route('/users/<int:user_id>', methods=['PUT'])
 def update_user(user_id):
     updated_data = request.get_json()
     for user in users:
